@@ -1,17 +1,261 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
+
+<head>
     <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+</head>
+
+<body id="ht">
+    <br>
+    <div class="checker white_checker" style="display:none"> </div>
+    <div class="checker black_checker" style="display:none"> </div>
+
+
+    <div class="square" style="display: none" id="ht"> </div>
+    <div class="black_background" id="black_background"> </div>
+
+    <div class="score" id="score">
+        <br>
+    </div>
+    <div class="table" id="table">
+
+        <div class="checker white_checker"> </div>
+        <div class="checker white_checker"> </div>
+        <div class="checker white_checker"> </div>
+        <div class="checker white_checker"> </div>
+        <div class="checker white_checker"> </div>
+        <div class="checker white_checker"> </div>
+        <div class="checker white_checker"> </div>
+        <div class="checker white_checker"> </div>
+        <div class="checker white_checker"> </div>
+        <div class="checker white_checker"> </div>
+        <div class="checker white_checker"> </div>
+        <div class="checker white_checker"> </div>
+
+        <div class="checker black_checker"> </div>
+        <div class="checker black_checker"> </div>
+        <div class="checker black_checker"> </div>
+        <div class="checker black_checker"> </div>
+        <div class="checker black_checker"> </div>
+        <div class="checker black_checker"> </div>
+        <div class="checker black_checker"> </div>
+        <div class="checker black_checker"> </div>
+        <div class="checker black_checker"> </div>
+        <div class="checker black_checker"> </div>
+        <div class="checker black_checker"> </div>
+        <div class="checker black_checker"> </div>
+
+
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="clear_float"> </div>
+
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="clear_float"> </div>
+
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="clear_float"> </div>
+
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="clear_float"> </div>
+
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="clear_float"> </div>
+
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="clear_float"> </div>
+
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="clear_float"> </div>
+
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="square white_square"> </div>
+        <div class="square black_square"> </div>
+        <div class="clear_float"> </div>
+
+    </div>
+    <script>
+        /*=========variabile globale=========================*/
+
+        var square_class = document.getElementsByClassName("square");
+        var white_checker_class = document.getElementsByClassName("white_checker");
+        var black_checker_class = document.getElementsByClassName("black_checker");
+        var table = document.getElementById("table");
+        var score = document.getElementById("score");
+        var black_background = document.getElementById("black_background");
+        var windowHeight =
+            window.innerHeight ||
+            document.documentElement.clientHeight ||
+            document.body.clientHeight;
+        var windowWidth =
+            window.innerWidth ||
+            document.documentElement.clientWidth ||
+            document.body.clientWidth;
+        var moveLength = 80;
+        var moveDeviation = 10;
+        var Dimension = 1;
+        var selectedPiece, selectedPieceindex;
+        var upRight, upLeft, downLeft, downRight; // toate variantele posibile de mers pt o  dama
+        var contor = 0,
+            gameOver = 0;
+        var bigScreen = 1;
+
+        var block = [];
+        var w_checker = [];
+        var b_checker = [];
+        var the_checker;
+        var oneMove;
+        var anotherMove;
+        var mustAttack = false;
+        var multiplier = 1;
+
+        var square_p = function(square, index) {
+            this.id = square;
+            this.ocupied = false;
+            this.pieceId = undefined;
+            this.id.onclick = function() {
+                makeMove(index);
+            };
+        };
+
+        var checker = function(piece, color, square) {
+            this.id = piece;
+            this.color = color;
+            this.king = false;
+            this.ocupied_square = square;
+            this.alive = true;
+            this.attack = false;
+            if (square % 8) {
+                this.coordX = square % 8;
+                this.coordY = Math.floor(square / 8) + 1;
+            } else {
+                this.coordX = 8;
+                this.coordY = square / 8;
+            }
+            this.id.onclick = function() {
+                showMoves(piece);
+            };
+        };
+
+        checker.prototype.setCoord = function(X, Y) {
+            var x = (this.coordX - 1) * moveLength + moveDeviation;
+            var y = (this.coordY - 1) * moveLength + moveDeviation;
+            this.id.style.top = y + "px";
+            this.id.style.left = x + "px";
+        };
+
+        for (var i = 1; i <= 64; i++) block[i] = new square_p(square_class[i], i);
+
+        for (var i = 1; i <= 4; i++) {
+            w_checker[i] = new checker(white_checker_class[i], "white", 2 * i - 1);
+            w_checker[i].setCoord(0, 0);
+            block[2 * i - 1].ocupied = true;
+            block[2 * i - 1].pieceId = w_checker[i];
+        }
+
+        for (var i = 5; i <= 8; i++) {
+            w_checker[i] = new checker(white_checker_class[i], "white", 2 * i);
+            w_checker[i].setCoord(0, 0);
+            block[2 * i].ocupied = true;
+            block[2 * i].pieceId = w_checker[i];
+        }
+
+        for (var i = 9; i <= 12; i++) {
+            w_checker[i] = new checker(white_checker_class[i], "white", 2 * i - 1);
+            w_checker[i].setCoord(0, 0);
+            block[2 * i - 1].ocupied = true;
+            block[2 * i - 1].pieceId = w_checker[i];
+        }
+
+        //damele negre
+        for (var i = 1; i <= 4; i++) {
+            b_checker[i] = new checker(black_checker_class[i], "black", 56 + 2 * i);
+            b_checker[i].setCoord(0, 0);
+            block[56 + 2 * i].ocupied = true;
+            block[56 + 2 * i].pieceId = b_checker[i];
+        }
+
+        for (var i = 5; i <= 8; i++) {
+            b_checker[i] = new checker(black_checker_class[i], "black", 40 + 2 * i - 1);
+            b_checker[i].setCoord(0, 0);
+            block[40 + 2 * i - 1].ocupied = true;
+            block[40 + 2 * i - 1].pieceId = b_checker[i];
+        }
+
+        for (var i = 9; i <= 12; i++) {
+            b_checker[i] = new checker(black_checker_class[i], "black", 24 + 2 * i);
+            b_checker[i].setCoord(0, 0);
+            block[24 + 2 * i].ocupied = true;
+            block[24 + 2 * i].pieceId = b_checker[i];
+        }
+    </script>
+</body>
+
 </html>
