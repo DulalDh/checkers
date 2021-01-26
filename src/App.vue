@@ -1,16 +1,9 @@
 <template>
-  <div id="app">
-    <boardComponent />
-  </div>
+  <div id="app"></div>
 </template>
 
 <script>
-import BoardComponent from "./components/BoardComponent.vue";
-
 export default {
   name: "App",
-  components: {
-    BoardComponent,
-  },
 };
 </script>
